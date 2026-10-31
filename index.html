@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دار الإمارة للعقارات الفاخرة | استثمارك العقاري الأمثل</title>
+    <!-- Google Fonts: Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0b0f19;
+            --bg-card: #131b2e;
+            --accent-gold: #d4af37;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(11, 15, 25, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--text-light);
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        .header-btn {
+            background-color: var(--accent-gold);
+            color: #0b0f19;
+            padding: 8px 22px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .header-btn:hover {
+            background-color: #b08d4c;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 190px 8% 130px;
+            background: linear-gradient(rgba(11, 15, 25, 0.85), rgba(11, 15, 25, 0.95)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80') center/cover;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            max-width: 850px;
+            margin-inline: auto;
+            line-height: 1.25;
+        }
+
+        .hero h1 span {
+            color: var(--accent-gold);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-inline: auto;
+            margin-bottom: 40px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-gold);
+            color: #0b0f19;
+            padding: 12px 35px;
+            font-weight: 700;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: #b08d4c;
+        }
+
+        /* Properties Section */
+        .properties {
+            padding: 100px 8%;
+            background-color: var(--bg-dark);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        .grid-properties {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .property-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .property-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        .property-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .property-body {
+            padding: 25px;
+        }
+
+        .property-price {
+            color: var(--accent-gold);
+            font-size: 1.4rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .property-title {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .property-details {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 8%;
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            outline: none;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--accent-gold);
+        }
+
+        .submit-btn {
+            background-color: var(--accent-gold);
+            color: var(--bg-dark);
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #b08d4c;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #06080e;
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">دار الإمارة <span>للعقارات</span></div>
+        <nav>
+            <ul>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#properties">العقارات</a></li>
+                <li><a href="#contact">حجز موعد</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="header-btn">تواصل معنا</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>اكتشف أفخم <span>العقارات والفلل العصرية</span> في أرقى المواقع</h1>
+        <p>نقدم لك محافظ عقارية حصرية تلبي تطلعات النخبة وتضمن لك أعلى عوائد الاستثمار بخبرة واحترافية عالية.</p>
+        <a href="#properties" class="btn-primary">تصفح العقارات المتاحة</a>
+    </section>
+
+    <!-- Properties Section -->
+    <section class="properties" id="properties">
+        <div class="section-header">
+            <h2>أحدث العقارات الفاخرة</h2>
+            <p>مجموعة مختارة بعناية لتناسب أصحاب الذوق الرفيع</p>
+        </div>
+        <div class="grid-properties">
+            <div class="property-card">
+                <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="property-body">
+                    <div class="property-price">4,500,000 ر.س</div>
+                    <h3 class="property-title">فيلا الملك فهد الفاخرة</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">تصميم عصري متكامل مع مسبح خاص وحديقة واسعة بإطلالة ساحرة.</p>
+                    <div class="property-details">
+                        <span>🛏️ 5 غرف نوم</span>
+                        <span>🚿 6 حمامات</span>
+                        <span>📐 650 م²</span>
+                    </div>
+                </div>
+            </div>
+            <div class="property-card">
+                <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="property-body">
+                    <div class="property-price">2,800,000 ر.س</div>
+                    <h3 class="property-title">قصر النخيل السكني</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">تشطيبات ديلوكس ومواد بناء عالمية مع نظام ذكي للمنزل بالكامل.</p>
+                    <div class="property-details">
+                        <span>🛏️ 4 غرف نوم</span>
+                        <span>🚿 5 حمامات</span>
+                        <span>📐 520 م²</span>
+                    </div>
+                </div>
+            </div>
+            <div class="property-card">
+                <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="property-body">
+                    <div class="property-price">3,200,000 ر.س</div>
+                    <h3 class="property-title">بنتهاوس الأفق الراقي</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">إطلالة بانورامية فريدة على المدينة مع مصعد خاصة وتراس واسع.</p>
+                    <div class="property-details">
+                        <span>🛏️ 3 غرف نوم</span>
+                        <span>🚿 4 حمامات</span>
+                        <span>📐 410 م²</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <h2>احجز معاينة عقارية أو استشر خبرائنا</h2>
+            <p>املأ النموذج أدناه وسيتواصل معك مستشارنا العقاري خلال دقائق</p>
+        </div>
+        <div class="contact-grid">
+            <div style="color: var(--text-muted);">
+                <h3 style="color: var(--text-light); margin-bottom: 15px; font-size: 1.4rem;">لماذا تختار دار الإمارة؟</h3>
+                <p style="margin-bottom: 15px;">✓ استشارات عقارية دقيقة مبنية على تحليل بيانات السوق.</p>
+                <p style="margin-bottom: 15px;">✓ شفافية تامة وموثوقية في توثيق العقود والصفقات.</p>
+                <p style="margin-bottom: 15px;">✓ محفظة واسعة من العقارات الحصرية التي لا تتوفر في أماكن أخرى.</p>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="الاسم الكريم" required>
+                    <input type="tel" placeholder="رقم الهاتف (مع الرمز الدولي)" required>
+                    <textarea rows="4" placeholder="استفسارك أو العقار الذي تود معاينته..." required></textarea>
+                    <button type="submit" class="submit-btn">إرسال الطلب</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 دار الإمارة للعقارات. جميع الحقوق محفوظة | تصاميم الويب بواسطة هاجر</p>
+    </footer>
+
+</body>
+</html>
